@@ -1,0 +1,389 @@
+Mon Jun  5 05:38:25 UTC 2023
+Linux LinuxMachine 5.15.49-linuxkit #1 SMP Tue Sep 13 07:51:46 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+movie.cpp: In member function ‘virtual bool Movie::operator<(Movie&) const’:
+movie.cpp:81:30: warning: unused parameter ‘a’ [-Wunused-parameter]
+ bool Movie::operator<(Movie &a) const { return false; }
+                       ~~~~~~~^
+movie.cpp: In member function ‘virtual bool Movie::operator>(Movie&) const’:
+movie.cpp:83:30: warning: unused parameter ‘a’ [-Wunused-parameter]
+ bool Movie::operator>(Movie &a) const { return false; }
+                       ~~~~~~~^
+movie.cpp: In member function ‘virtual bool Movie::operator==(Movie&) const’:
+movie.cpp:85:31: warning: unused parameter ‘a’ [-Wunused-parameter]
+ bool Movie::operator==(Movie &a) const { return false; }
+                        ~~~~~~~^
+=====================================================
+2. Runs and produces correct output
+=====================================================
+Start testStore1
+End testStore1
+Start testStore2
+Invalid movie code in movie file
+
+Invalid movie code in movie file
+
+ID: 1000
+Mouse, Minnie
+ID: 5000
+Frog, Freddie
+ID: 8000
+Wacky, Wally
+Invalid movie code in command file
+
+Invalid command code
+
+Invalid command code
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+No customer with ID B 1234 D C 2 1971 Malcolm McDowell
+
+No movie with title Bogus Title
+
+Invalid media type
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+No movie with title Bogus Title
+
+ID: 1000
+Mouse, Minnie
+
+borrow: 
+borrow: 
+borrow: 
+borrow: 
+End testStore2
+=====================================
+Start testStoreFinal
+Start testStore2
+Invalid movie code in movie file
+
+Invalid movie code in movie file
+
+ID: 1000
+Mouse, Minnie
+ID: 5000
+Frog, Freddie
+ID: 8000
+Wacky, Wally
+Invalid movie code in command file
+
+Invalid command code
+
+Invalid command code
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+No customer with ID B 1234 D C 2 1971 Malcolm McDowell
+
+No movie with title Bogus Title
+
+Invalid media type
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+Movie not in stock
+
+No movie with title Bogus Title
+
+ID: 1000
+Mouse, Minnie
+
+borrow: 
+borrow: 
+borrow: 
+borrow: 
+End testStore2
+End testStoreFinal
+=====================================
+Done.
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+16673 warnings generated.
+33346 warnings generated.
+49241 warnings generated.
+65914 warnings generated.
+81543 warnings generated.
+92906 warnings generated.
+109572 warnings generated.
+126586 warnings generated.
+143574 warnings generated.
+/home/cssuwbstudent/lalitn/classic.cpp:38:37: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (mainActor <= temp.mainActor)
+                                    ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/classic.cpp:39:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/classic.cpp:48:37: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (mainActor >= temp.mainActor)
+                                    ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/classic.cpp:49:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/classic.cpp:58:37: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (mainActor == temp.mainActor)
+                                    ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/classic.cpp:59:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/comedy.cpp:32:33: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (release <= temp.release)
+                                ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/comedy.cpp:33:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/comedy.cpp:42:33: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (release >= temp.release)
+                                ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/comedy.cpp:43:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/comedy.cpp:52:33: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (release == temp.release)
+                                ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/comedy.cpp:53:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/customer.cpp:17:27: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+Customer::Customer(string ID, string firstName, string lastName) {
+                          ^~
+                          id
+/home/cssuwbstudent/lalitn/customer.h:16:3: error: function 'Customer::Customer' has a definition with different parameter names [readability-inconsistent-declaration-parameter-name,-warnings-as-errors]
+  Customer(string c, string f, string l);
+  ^
+/home/cssuwbstudent/lalitn/customer.cpp:17:11: note: the definition seen here
+Customer::Customer(string ID, string firstName, string lastName) {
+          ^
+/home/cssuwbstudent/lalitn/customer.h:16:3: note: differing parameters are named here: ('c'), in definition: ('ID')
+  Customer(string c, string f, string l);
+  ^               ~
+                  ID
+/home/cssuwbstudent/lalitn/customer.h:34:8: error: function 'Customer::addHistory' has a definition with different parameter names [readability-inconsistent-declaration-parameter-name,-warnings-as-errors]
+  void addHistory(Movie *movie, std::string type);
+       ^
+/home/cssuwbstudent/lalitn/customer.cpp:33:16: note: the definition seen here
+void Customer::addHistory(Movie *m, string a) {
+               ^
+/home/cssuwbstudent/lalitn/customer.h:34:8: note: differing parameters are named here: ('type'), in definition: ('a')
+  void addHistory(Movie *movie, std::string type);
+       ^                                    ~~~~
+                                            a
+/home/cssuwbstudent/lalitn/drama.cpp:32:29: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (title <= temp.title)
+                            ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/drama.cpp:33:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/drama.cpp:42:29: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (title >= temp.title)
+                            ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/drama.cpp:43:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/drama.cpp:52:29: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (title == temp.title)
+                            ^
+note: this fix will not be applied because it overlaps with another fix
+/home/cssuwbstudent/lalitn/drama.cpp:53:14: error: redundant boolean literal in conditional return statement [readability-simplify-boolean-expr,-warnings-as-errors]
+      return true;
+~~~~~~~~~~~~~^~~~~
+/home/cssuwbstudent/lalitn/hashtable.cpp:5:40: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  for (int i = 0; i < MAXHASHSIZE; i++)
+                                       ^
+                                        {
+/home/cssuwbstudent/lalitn/hashtable.cpp:40:24: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (curr->key == key)
+                       ^
+                        {
+/home/cssuwbstudent/lalitn/hashtable.cpp:43:32: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (curr->next->key == key)
+                               ^
+                                {
+/home/cssuwbstudent/lalitn/hashtable.cpp:78:32: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (retrieve(key) != nullptr)
+                               ^
+                                {
+/home/cssuwbstudent/lalitn/hashtable.cpp:84:40: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  for (int i = 0; i < MAXHASHSIZE; i++)
+                                       ^
+                                        {
+/home/cssuwbstudent/lalitn/hashtable.cpp:85:29: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+    if (array[i] != nullptr)
+                            ^
+                             {
+/home/cssuwbstudent/lalitn/hashtable.cpp:89:47: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+template <class T> int HashTable<T>::hash(int ID) { return ID % MAXHASHSIZE; }
+                                              ^~           ~~
+                                              id           id
+/home/cssuwbstudent/lalitn/hashtable.h:9:10: error: invalid case style for struct 'node' [readability-identifier-naming,-warnings-as-errors]
+  struct node {
+         ^~~~
+         Node
+/home/cssuwbstudent/lalitn/hashtable.h:34:16: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+  int hash(int ID);
+               ^~
+               id
+/home/cssuwbstudent/lalitn/movie.cpp:44:12: error: method 'getStock' can be made const [readability-make-member-function-const,-warnings-as-errors]
+int Movie::getStock() { return stock; }
+           ^
+                      const
+/home/cssuwbstudent/lalitn/movie.cpp:46:12: error: method 'getRelease' can be made const [readability-make-member-function-const,-warnings-as-errors]
+int Movie::getRelease() { return release; }
+           ^
+                        const
+/home/cssuwbstudent/lalitn/movie.cpp:62:5: error: do not use 'else' after 'return' [llvm-else-after-return,readability-else-after-return,-warnings-as-errors]
+  } else {
+    ^~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:14:10: error: invalid case style for variable 'ID' [readability-identifier-naming,-warnings-as-errors]
+  string ID;
+         ^~
+         id
+/home/cssuwbstudent/lalitn/store.cpp:104:15: error: method 'removeSpaces' can be made static [readability-convert-member-functions-to-static,-warnings-as-errors]
+string Store::removeSpaces(string input) {
+              ^
+/home/cssuwbstudent/lalitn/store.cpp:136:12: error: invalid case style for variable 'ID' [readability-identifier-naming,-warnings-as-errors]
+    string ID;
+           ^~
+           id
+/home/cssuwbstudent/lalitn/store.cpp:142:12: error: invalid case style for variable 'ID' [readability-identifier-naming,-warnings-as-errors]
+    string ID;
+           ^~
+           id
+/home/cssuwbstudent/lalitn/store.cpp:154:12: error: invalid case style for variable 'ID' [readability-identifier-naming,-warnings-as-errors]
+    string ID;
+           ^~
+           id
+/home/cssuwbstudent/lalitn/store.cpp:264:63: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+void Store::processBorrowCommand(stringstream &stream, string ID) {
+                                                              ^~
+                                                              id
+/home/cssuwbstudent/lalitn/store.cpp:268:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string director, title;
+    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:285:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string month, year, majorActorFirstName, majorActorLastName;
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:301:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string title, year;
+    ^~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:321:63: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+void Store::processReturnCommand(stringstream &stream, string ID) {
+                                                              ^~
+                                                              id
+/home/cssuwbstudent/lalitn/store.cpp:325:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string director, title;
+    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:342:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string month, year, majorActorFirstName, majorActorLastName;
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:358:5: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+    string title, year;
+    ^~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/lalitn/store.cpp:406:13: error: method 'borrowMovie' can be made static [readability-convert-member-functions-to-static,-warnings-as-errors]
+void Store::borrowMovie(Customer *customer, Movie *movie) {
+            ^
+/home/cssuwbstudent/lalitn/store.cpp:414:13: error: method 'returnMovie' can be made static [readability-convert-member-functions-to-static,-warnings-as-errors]
+void Store::returnMovie(Customer *customer, Movie *movie) {
+            ^
+/home/cssuwbstudent/lalitn/store.h:8:11: error: suspicious #include of file with '.cpp' extension [bugprone-suspicious-include,-warnings-as-errors]
+#include "hashtable.cpp"
+          ^
+/home/cssuwbstudent/lalitn/store.h:8:11: note: did you mean to include 'hashtable.h'?
+/home/cssuwbstudent/lalitn/store.h:27:58: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+  void processBorrowCommand(stringstream &stream, string ID);
+                                                         ^~
+                                                         id
+/home/cssuwbstudent/lalitn/store.h:28:58: error: invalid case style for parameter 'ID' [readability-identifier-naming,-warnings-as-errors]
+  void processReturnCommand(stringstream &stream, string ID);
+                                                         ^~
+                                                         id
+/home/cssuwbstudent/lalitn/store_test.cpp:43:21: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!customerFile)
+                    ^
+                     {
+/home/cssuwbstudent/lalitn/store_test.cpp:45:19: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!moviesFile)
+                  ^
+                   {
+/home/cssuwbstudent/lalitn/store_test.cpp:47:25: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!transactionsFile)
+                        ^
+                         {
+/home/cssuwbstudent/lalitn/store_test.cpp:50:10: error: invalid case style for variable 'S1' [readability-identifier-naming,-warnings-as-errors]
+  Store *S1 = new Store();
+         ^~
+         s1
+/home/cssuwbstudent/lalitn/store_test.cpp:66:21: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!customerFile)
+                    ^
+                     {
+/home/cssuwbstudent/lalitn/store_test.cpp:68:19: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!moviesFile)
+                  ^
+                   {
+/home/cssuwbstudent/lalitn/store_test.cpp:70:25: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  if (!transactionsFile)
+                        ^
+                         {
+/home/cssuwbstudent/lalitn/store_test.cpp:73:10: error: invalid case style for variable 'S1' [readability-identifier-naming,-warnings-as-errors]
+  Store *S1 = new Store();
+         ^~
+         s1
+Suppressed 143460 warnings (143460 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+59 warnings treated as errors
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./classic.cpp
+Running clang-format on ./comedy.cpp
+Running clang-format on ./customer.cpp
+Running clang-format on ./drama.cpp
+Running clang-format on ./hashtable.cpp
+Running clang-format on ./main.cpp
+Running clang-format on ./movie.cpp
+Running clang-format on ./store.cpp
+Running clang-format on ./store_test.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
